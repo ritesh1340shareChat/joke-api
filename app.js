@@ -8,6 +8,8 @@ const options = {
     'x-rapidapi-host': 'dad-jokes.p.rapidapi.com',
     useQueryString: true
   }
+
+  // something
 };
 
 request(options, function (error, response, body) {
