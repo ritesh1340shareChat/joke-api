@@ -1,31 +1,13 @@
 const request = require('request');
+const api1 = require ( "./routes/api1" ) ; 
 
-const options = {
-  method: 'GET',
-  url: 'https://dad-jokes.p.rapidapi.com/random/joke',
-  headers: {
-    'x-rapidapi-key': '36a961c3bemshf2a385ee352af65p11bc80jsn0fbebd7d6ad0',
-    'x-rapidapi-host': 'dad-jokes.p.rapidapi.com',
-    useQueryString: true
-  }
+const express = require('express')
+const app = express()
+const port = 3000
 
-  // some other thing is added
-};
+app.get('/', api1) ; 
 
-request(options, function (error, response, body) {
-	
-  if ( error ) 
-  {
-    console.log ( "some error occured" ) ; 
-    return ; 
-  }
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
 
-    const usefulData = JSON.parse ( body ).body[0]
-
-    const setupOfJoke = usefulData.setup ; 
-    const punchlineOfJoke = usefulData.punchline ; 
-
-    console.log ( setupOfJoke ) ; 
-    console.log ( punchlineOfJoke ) ; 
-    
-});
