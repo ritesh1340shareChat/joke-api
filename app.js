@@ -9,7 +9,7 @@ const options = {
     useQueryString: true
   }
 
-  // something
+  // some other thing
 };
 
 request(options, function (error, response, body) {
